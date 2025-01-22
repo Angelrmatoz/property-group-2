@@ -22,7 +22,17 @@ function browserSyncInit(cb) {
             }
         },
         port: 3000,
-        notify: false
+        notify: false,
+        callbacks: {
+            ready: function (err, bs) {
+                bs.addMiddleware("*", function (req, res) {
+                    res.writeHead(302, {
+                        location: "404.html"
+                    });
+                    res.end();
+                });
+            }
+        }
     });
     cb();
 }
@@ -43,7 +53,12 @@ function css() {
     return gulp
         .src('src/scss/**/*.scss')
         .pipe(sourcemaps.init())
-        .pipe(plumber())
+        .pipe(plumber({
+            errorHandler: function (err) {
+                console.log(err.message);
+                this.emit('end');
+            }
+        }))
         .pipe(sass())
         .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe(sourcemaps.write('.'))
@@ -59,6 +74,12 @@ function javascript() {
             'src/js/main.js'         // Después el archivo principal
         ])
         .pipe(sourcemaps.init())
+        .pipe(plumber({
+            errorHandler: function (err) {
+                console.log(err.message);
+                this.emit('end');
+            }
+        }))
         .pipe(concat('main.min.js'))
         .pipe(terser())
         .pipe(sourcemaps.write('.'))
@@ -86,17 +107,39 @@ function createInitialJS(cb) {
 
 // Vigilar cambios en archivos
 function watchFiles() {
+    gulp.watch('src/scss/**/*.scss', css).on('error', function (err) {
+        console.log(err.message);
+        this.emit('end');
+    });
+
+    gulp.watch('src/js/**/*.js', javascript).on('error', function (err) {
+        console.log(err.message);
+        this.emit('end');
+    });
+
+    gulp.watch('src/assets/images/**/*.{png,jpg,jpeg}', versionWebp).on('error', function (err) {
+        console.log(err.message);
+        this.emit('end');
+    });
+
+    gulp.watch('src/pages/**/*.html').on('change', browserSync.reload).on('error', function (err) {
+        console.log(err.message);
+        this.emit('end');
+    });
+}
+
+// Vigilar cambios en archivos (sin browserSync)
+function watchOnly() {
     gulp.watch('src/scss/**/*.scss', css);
     gulp.watch('src/js/**/*.js', javascript);
     gulp.watch('src/assets/images/**/*.{png,jpg,jpeg}', versionWebp);
-    gulp.watch('src/pages/**/*.html').on('change', browserSync.reload);
 }
 
 // Tareas
 exports.css = css;
 exports.js = javascript;
 exports.webp = versionWebp;
-exports.watch = watchFiles;
+exports.watch = watchOnly;
 exports.build = gulp.parallel(css, javascript, versionWebp);
 exports.default = gulp.series(
     createDirs,

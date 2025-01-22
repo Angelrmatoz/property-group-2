@@ -3,14 +3,40 @@
 .header {
   position: relative;
 
+  &__contenido {
+    position: relative;
+  }
+
+  &__titulo {
+    position: absolute;
+    top: 15rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: $fuente_principal;
+    font-size: 3rem;
+    font-weight: bold;
+    white-space: nowrap;
+    text-align: center;
+
+    @include breakpoint-down(sm) {
+      font-size: 2rem;
+    }
+  }
+
   &__imagen {
     line-height: 0;
     height: 100%;
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+
+      @include breakpoint-down(md) {
+        height: 100vh;
+      }
     }
   }
 }
