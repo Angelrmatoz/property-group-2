@@ -1,0 +1,25 @@
+# Dependencias
+node_modules/
+
+# Archivos compilados
+dist/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de entorno
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace 

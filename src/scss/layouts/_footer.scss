@@ -1,0 +1,55 @@
+@use "../utils" as *;
+
+.footer {
+  background-color: $jet;
+  color: white;
+  padding: 2rem;
+  width: 100%;
+}
+
+.footer__contenido {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    max-width: 120rem;
+  }
+}
+
+.footer__texto {
+  text-align: left;
+
+  img {
+    width: 13rem;
+  }
+
+  p {
+    color: $timberwolf;
+    font-size: 1.4rem;
+    margin: 1rem 0 0 0;
+
+    @include breakpoint-down(sm) {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.footer__redes {
+  display: flex;
+  gap: 2rem;
+  margin-left: auto;
+
+  svg {
+    width: 4rem;
+    height: 4rem;
+    fill: $timberwolf;
+
+    @include breakpoint-down(sm) {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}

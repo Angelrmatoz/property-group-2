@@ -1,0 +1,35 @@
+@use "fonts";
+@use "sass:string";
+@use "sass:map";
+
+// Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+// Fuentes
+$fuente_principal: "Fashion Fetish", "Raleway", sans-serif;
+$fuente_sc: "Fashion Fetish SC", "Raleway", sans-serif;
+$fuente_outline: "Fashion Fetish Outline", "Raleway", sans-serif;
+$fuente_italic: "Fashion Fetish Italic", "Raleway", sans-serif;
+
+// Breakpoints
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+// Colores
+$satin_sheen_gold: #c9a227;
+$saffron: #edc531;
+$jet: #333333;
+$timberwolf: #d6d6d6;
+
+// Fuentes
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$extrabold: 800;
+$black_weight: 900;

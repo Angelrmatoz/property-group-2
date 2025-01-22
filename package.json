@@ -1,0 +1,38 @@
+{
+  "name": "property-group-2",
+  "version": "1.0.0",
+  "description": "Empresa de Bienes Raíces, Property Group",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "PG",
+    "Property",
+    "Group",
+    "Bienes",
+    "Raíces"
+  ],
+  "author": "Ángel Matos",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "bootstrap": "^5.3.3",
+    "browser-sync": "^3.0.3",
+    "cssnano": "^6.0.5",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.1.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-webp": "^4.0.1",
+    "sass": "^1.71.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}

@@ -1,0 +1,15 @@
+// Normalize
+@use "../../node_modules/normalize.css/normalize.css";
+
+// Bootstrap
+@use "bootstrap" as *;
+
+// Base y Utilidades
+@use "utils/variables" as *;
+@use "utils/mixins" as *;
+@use "utils/fonts" as *;
+@use "utils/globales" as *;
+
+// Layouts
+@use "layouts/header" as *;
+@use "layouts/footer" as *;

@@ -1,0 +1,21 @@
+@use "variables" as *;
+@use "sass:map";
+
+/** Media Queries **/
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+@mixin grid($columnas, $espaciado) {
+  display: grid;
+  gap: $espaciado;
+  grid-template-columns: repeat($columnas, 1fr);
+}
