@@ -8,19 +8,20 @@
   }
 
   &__titulo {
-    position: absolute;
-    top: 15rem;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-family: $fuente_principal;
+
+
+
+    @include breakpoint-up(lg) {
+      position: absolute;
+      top: 18%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-family: $fuente_principal;
     font-size: 3rem;
     font-weight: bold;
-    white-space: nowrap;
-    text-align: center;
-
-    @include breakpoint-down(sm) {
-      font-size: 2rem;
+      white-space: nowrap;
+      text-align: center;
     }
   }
 
