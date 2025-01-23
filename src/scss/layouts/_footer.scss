@@ -23,7 +23,7 @@
   text-align: left;
 
   img {
-    width: 13rem;
+    width: 14rem;
   }
 
   p {
@@ -38,9 +38,15 @@
 }
 
 .footer__redes {
+
   display: flex;
-  gap: 2rem;
-  margin-left: auto;
+  flex-direction: column;
+  gap: 1rem;
+
+  .footer__redes-iconos {
+    display: flex;
+    gap: 2rem;
+  }
 
   svg {
     width: 4rem;
@@ -52,4 +58,13 @@
       height: 3rem;
     }
   }
+
+  .footer__redes-texto {
+    h4 {
+      font-size: 1.7rem;
+      white-space: nowrap;
+      font-weight: bold;
+    }
+  }
 }
+

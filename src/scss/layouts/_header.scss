@@ -9,9 +9,10 @@
 
   &__titulo {
 
+    display: none;
 
-
-    @include breakpoint-up(lg) {
+    @include breakpoint-up(md) {
+      display: block;
       position: absolute;
       top: 18%;
       left: 50%;
