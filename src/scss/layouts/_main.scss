@@ -1,111 +1,112 @@
 @use "../utils" as *;
 
+.contenido-principal {
 
-.articles {
-  font-family: $fuente_principal;
-  font-size: 1.2rem;
-  line-height: 1.6rem;
-  background-color: white;
-  display: grid;
-  max-width: 75rem;
-  padding: 3rem 1.5rem;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-  gap: 1.5rem;
-}
+  
+  .articles {
+    font-family: $fuente_principal;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    background-color: white;
+    display: grid;
+    max-width: 75rem;
+    padding: 3rem 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 1.5rem;
+  }
 
-article {
-  --img-scale: 1.001;
-  --title-color: black;
-  --link-icon-translate: -2rem;
-  --link-icon-opacity: 0;
-  position: relative;
-  border-radius: 1rem;
-  box-shadow: none;
-  background: #fff;
-  transform-origin: center;
-  transition: all 0.4s ease-in-out;
-  overflow: hidden;
-}
+  article {
+    --img-scale: 1.001;
+    --title-color: black;
+    --link-icon-translate: -2rem;
+    --link-icon-opacity: 0;
+    position: relative;
+    border-radius: 1rem;
+    box-shadow: none;
+    background: #fff;
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
 
-article a::after {
-  position: absolute;
-  inset-block: 0;
-  inset-inline: 0;
-  cursor: pointer;
-  content: "";
-}
+    a {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: #28666e;
 
-/* estilos básicos de los elementos del artículo */
-article h2 {
-  margin: 0 0 1.125rem 0;
-  font-family: "Bebas Neue", cursive;
-  font-size: 1.9rem;
-  letter-spacing: 0.06em;
-  color: var(--title-color);
-  transition: color 0.3s ease-out;
-}
+      &:focus {
+        outline: 0.0625rem dotted #28666e;
+      }
 
-figure {
-  margin: 0;
-  padding: 0;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-}
+      &::after {
+        position: absolute;
+        inset-block: 0;
+        inset-inline: 0;
+        cursor: pointer;
+        content: "";
+      }
 
-article img {
-  max-width: 100%;
-  transform-origin: center;
-  transform: scale(var(--img-scale));
-  transition: transform 0.4s ease-in-out;
-}
+      .icon {
+        min-width: 1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-left: 0.3125rem;
+        transform: translateX(var(--link-icon-translate));
+        opacity: var(--link-icon-opacity);
+        transition: all 0.3s;
+      }
+    }
 
-.article-body {
-  padding: 1.5rem;
-}
+    h2 {
+      margin: 0 0 1.125rem 0;
+      font-family: "Bebas Neue", cursive;
+      font-size: 1.9rem;
+      letter-spacing: 0.06em;
+      color: var(--title-color);
+      transition: color 0.3s ease-out;
+    }
 
-article a {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  color: #28666e;
-}
+    img {
+      max-width: 100%;
+      transform-origin: center;
+      transform: scale(var(--img-scale));
+      transition: transform 0.4s ease-in-out;
+    }
 
-article a:focus {
-  outline: 0.0625rem dotted #28666e;
-}
+    &:has(:hover, :focus) {
+      --img-scale: 1.1;
+      --title-color: #28666e;
+      --link-icon-translate: 0;
+      --link-icon-opacity: 1;
+      box-shadow: rgba(0, 0, 0, 0.16) 0 0.625rem 2.25rem 0,
+        rgba(0, 0, 0, 0.06) 0 0 0 0.0625rem;
+    }
+  }
 
-article a .icon {
-  min-width: 1.5rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-left: 0.3125rem;
-  transform: translateX(var(--link-icon-translate));
-  opacity: var(--link-icon-opacity);
-  transition: all 0.3s;
-}
+  figure {
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
 
-/* usando el selector relacional has() para actualizar nuestras propiedades personalizadas */
-article:has(:hover, :focus) {
-  --img-scale: 1.1;
-  --title-color: #28666e;
-  --link-icon-translate: 0;
-  --link-icon-opacity: 1;
-  box-shadow: rgba(0, 0, 0, 0.16) 0 0.625rem 2.25rem 0,
-    rgba(0, 0, 0, 0.06) 0 0 0 0.0625rem;
-}
+  .article-body {
+    padding: 1.5rem;
+  }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-.sr-only:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 0.0625rem;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 0.0625rem;
+  .sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 0.0625rem;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 0.0625rem;
+  }
 }
