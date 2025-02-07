@@ -64,23 +64,52 @@ npm start
 
 ```
 property-group-2/              
+│
 ├── src/                      
 │   ├── assets/              
 │   │   └── images/          
-│   │       ├── properties/  
-│   │       ├── icons/       
-│   │       └── logo/        
+│   │       ├── properties/  # Fotos de casas, departamentos, etc.
+│   │       ├── icons/       # Iconos de redes sociales, menú, etc.
+│   │       └── logo/        # Logo de la empresa
+│   │
 │   ├── scss/               
-│   │   ├── components/      
-│   │   ├── layouts/        
-│   │   ├── utils/          
-│   │   └── main.scss       
+│   │   ├── components/      # Componentes reutilizables
+│   │   │   ├── _buttons.scss    # Estilos de botones
+│   │   │   ├── _cards.scss      # Tarjetas de propiedades
+│   │   │   ├── _navbar.scss     # Barra de navegación
+│   │   │   ├── _footer.scss     # Pie de página
+│   │   │   └── _forms.scss      # Estilos de formularios
+│   │   │
+│   │   ├── layouts/        # Estructuras de página
+│   │   │   ├── _grid.scss      # Sistema de grid
+│   │   │   ├── _header.scss    # Estructura del encabezado
+│   │   │   └── _sections.scss  # Secciones principales
+│   │   │
+│   │   ├── utils/          # Utilidades y configuración
+│   │   │   ├── _variables.scss # Variables (colores, fuentes, etc.)
+│   │   │   ├── _mixins.scss   # Mixins reutilizables
+│   │   │   └── _globales.scss # Estilos globales y reset
+│   │   │
+│   │   └── main.scss       # Archivo principal que importa todo
+│   │
 │   ├── js/                 
-│   │   ├── components/     
-│   │   ├── utils/          
-│   │   └── main.js         
-│   └── pages/              
-└── dist/                   
+│   │   ├── components/     # Componentes JavaScript
+│   │   │   ├── slider.js       # Carrusel de imágenes
+│   │   │   └── filter.js       # Filtros de búsqueda
+│   │   │
+│   │   ├── utils/          # Utilidades JavaScript
+│   │   │   └── helpers.js      # Funciones auxiliares
+│   │   │
+│   │   └── main.js         # Archivo principal JS
+│   │
+│   └── pages/              # Páginas HTML
+│       └── index.html      # Página principal
+│
+├── dist/                   # Archivos compilados (automático)
+├── node_modules/          # Dependencias (automático)
+├── package.json           # Configuración npm
+├── package-lock.json      # Lock de dependencias
+└── gulpfile.js            # Configuración Gulp                
 ```
 
 ## Personalización
