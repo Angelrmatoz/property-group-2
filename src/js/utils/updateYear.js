@@ -5,5 +5,3 @@ function updateYear() {
         yearElement.textContent = new Date().getFullYear();
     }
 }
-
-updateYear();

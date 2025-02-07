@@ -77,11 +77,13 @@
       color: white;
       font-family: sans-serif;
       font-weight: bold;
-      padding: 1rem 1.6rem;
+      padding: 1.2rem 1.6rem;
       margin: 0 0.8rem;
       position: relative;
       cursor: pointer;
       white-space: nowrap;
+      display: inline-block;
+
       &::before {
         content: " ";
         position: absolute;
@@ -93,6 +95,7 @@
         transition: 0.2s;
         border-radius: 2.5rem;
       }
+
       &:hover {
         &::before {
           background: $satin_sheen_gold;
@@ -100,6 +103,21 @@
           transform: scale(1.2);
         }
         color: white;
+      }
+
+      span {
+        position: relative;
+      }
+
+      &.active span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.3rem;
+        width: 100%;
+        height: 0.3rem;
+        background-color: $saffron;
+        z-index: 2;
       }
     }
   }
