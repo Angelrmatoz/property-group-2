@@ -64,23 +64,59 @@ npm start
 
 ```
 property-group-2/              
+│
 ├── src/                      
 │   ├── assets/              
-│   │   └── images/          
-│   │       ├── properties/  
-│   │       ├── icons/       
-│   │       └── logo/        
+│   │   ├── images/          
+│   │   │   ├── properties/  # Fotos de casas, departamentos, etc.
+│   │   │   ├── icons/       # Iconos de redes sociales, menú, etc.
+│   │   │   └── logo/        # Logo de la empresa
+│   │   │
+│   │   └── fonts/          # Archivos de fuentes Fashion Fetish
+│   │
 │   ├── scss/               
-│   │   ├── components/      
-│   │   ├── layouts/        
-│   │   ├── utils/          
-│   │   └── main.scss       
+│   │   ├── components/      # Componentes reutilizables
+│   │   │   ├── _buttons.scss    # Estilos de botones
+│   │   │   ├── _cards.scss      # Tarjetas de propiedades
+│   │   │   └── _navbar.scss     # Barra de navegación
+│   │   │
+│   │   ├── layouts/        # Estructuras de página
+│   │   │   ├── _header.scss    # Estructura del encabezado
+│   │   │   ├── _footer.scss    # Estilos del footer
+│   │   │   └── _main.scss      # Estilos del contenido principal
+│   │   │
+│   │   ├── utils/          # Utilidades y configuración
+│   │   │   ├── _variables.scss # Variables (colores, fuentes, etc.)
+│   │   │   ├── _mixins.scss   # Mixins reutilizables
+│   │   │   ├── _fonts.scss    # Configuración de fuentes
+│   │   │   ├── _globales.scss # Estilos globales y reset
+│   │   │   └── _index.scss    # Archivo de exportación de utilidades
+│   │   │
+│   │   ├── _bootstrap.scss # Importación de Bootstrap
+│   │   └── main.scss       # Archivo principal que importa todo
+│   │
 │   ├── js/                 
-│   │   ├── components/     
-│   │   ├── utils/          
-│   │   └── main.js         
-│   └── pages/              
-└── dist/                   
+│   │   ├── utils/          # Utilidades JavaScript
+│   │   │   ├── updateYear.js   # Actualización del año
+│   │   │   └── currentPage.js  # Manejo de página actual
+│   │   │
+│   │   └── main.js         # Archivo principal JS
+│   │
+│   └── pages/              # Páginas HTML
+│       ├── index.html      # Página principal
+│       ├── about-me.html   # Página Acerca de
+│       ├── properties.html # Página de propiedades
+│       ├── contact.html    # Página de contacto
+│       └── base.html       # Plantilla base
+│
+├── dist/                   # Archivos compilados (automático)
+├── node_modules/          # Dependencias (automático)
+├── package.json           # Configuración npm
+├── package-lock.json      # Lock de dependencias
+├── gulpfile.js           # Configuración Gulp
+├── .gitignore            # Archivos ignorados por git
+├── LICENSE               # Licencia ISC
+└── README.md             # Documentación del proyecto              
 ```
 
 ## Personalización
