@@ -1,8 +1,15 @@
 @use "../utils" as *;
 
 .contenido-principal {
-
   
+  .hero {
+    background-color: #f0f0f0;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  
+
   .articles {
     font-family: $fuente_principal;
     font-size: 1.2rem;
