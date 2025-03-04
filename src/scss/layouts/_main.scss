@@ -6,22 +6,28 @@
     justify-content: center;
 
     &__contenido {
-      padding: 4rem;
+      padding: 4rem 0;
+
+      p {
+        margin-top: 1rem;
+      }
     }
 
     &__icons {
 
       @include grid(3, 2rem);
 
+      h3 {
+        padding: 1rem 0;
+      }
+
       p {
-        margin-top: 1rem;
         font-size: 1.5rem;
       }
 
       svg {
         height: 4rem;
         width: 4rem;
-        margin-bottom: 1rem;
       }
     }
   }
