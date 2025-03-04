@@ -1,14 +1,30 @@
 @use "../utils" as *;
 
 .contenido-principal {
-  
   .hero {
-    background-color: #f0f0f0;
-    padding: 2rem;
     text-align: center;
+    justify-content: center;
+
+    &__contenido {
+      padding: 4rem;
+    }
+
+    &__icons {
+
+      @include grid(3, 2rem);
+
+      p {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+      }
+
+      svg {
+        height: 4rem;
+        width: 4rem;
+        margin-bottom: 1rem;
+      }
+    }
   }
-  
-  
 
   .articles {
     font-family: $fuente_principal;
