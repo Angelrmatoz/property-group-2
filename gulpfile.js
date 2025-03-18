@@ -70,8 +70,9 @@ function css() {
 function javascript() {
     return gulp
         .src([
-            'src/js/utils/**/*.js',  // Primero todos los archivos de utilidades
-            'src/js/main.js'         // Después el archivo principal
+            'src/js/utils/**/*.js',     // Primero todos los archivos de utilidades
+            'src/js/components/**/*.js', // Después los componentes
+            'src/js/main.js'            // Finalmente el archivo principal
         ])
         .pipe(sourcemaps.init())
         .pipe(plumber({
@@ -147,4 +148,4 @@ exports.default = gulp.series(
     gulp.parallel(css, javascript, versionWebp),
     browserSyncInit,
     watchFiles
-); 
+);
