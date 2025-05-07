@@ -1,8 +1,8 @@
-function navBar() {
+export function navBar() {
     const navBar = document.querySelector('.navegacion');
     const mainContent = document.querySelector('.contenido-principal');
     const navLinks = document.querySelectorAll('.navegacion a');
-    let lastScrollTop = 0;
+    let _lastScrollTop = 0;
 
     // Agregar una clase para la versión transparente (inicial)
     navBar.classList.add('navegacion--transparente');
@@ -46,7 +46,7 @@ function navBar() {
         }
 
         // Guardar la posición actual para la próxima vez
-        lastScrollTop = scrollTop;
+        _lastScrollTop = scrollTop;
     });
 
     // Agregar evento hover para los enlaces

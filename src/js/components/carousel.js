@@ -2,7 +2,7 @@
  * Módulo para manejar la funcionalidad del carrusel de imágenes
  */
 
-function initializeCarousel() {
+export function initializeCarousel() {
     console.log('Inicializando carrusel...');
 
     const carousel = document.querySelector('.hero-2__carousel');

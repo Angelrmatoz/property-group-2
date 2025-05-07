@@ -1,4 +1,4 @@
-function getCurrentPage() {
+export function getCurrentPage() {
     document.addEventListener('DOMContentLoaded', () => {
         let currentPage = window.location.pathname.split('/').pop();
         if (currentPage === "") { currentPage = "index.html"; }

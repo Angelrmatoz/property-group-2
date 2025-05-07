@@ -2,7 +2,7 @@
  * Módulo para manejar la funcionalidad de las pestañas de Bootstrap
  */
 
-function initializeTabs() {
+export function initializeTabs() {
     console.log('Inicializando pestañas...'); // Para verificar si la función se ejecuta
 
     const triggerTabList = [].slice.call(document.querySelectorAll('#ventajasTab button'));
@@ -24,4 +24,4 @@ function initializeTabs() {
             tab.show();
         }
     }
-} 
+}
